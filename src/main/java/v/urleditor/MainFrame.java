@@ -938,21 +938,22 @@ public class MainFrame extends javax.swing.JFrame {
             url = url.substring(url.indexOf("protected"));
 
             if(url.substring(url.indexOf("protected = ") + 12, url.indexOf(",")).compareTo("true") == 0)
-            protectedCheckBox.setSelected(true);
+                protectedCheckBox.setSelected(true);
             else
-            protectedCheckBox.setSelected(false);
+                protectedCheckBox.setSelected(false);
 
             url = url.substring(url.indexOf("user_group"));
             userGroupTextBox.setText(url.substring("user_group = ".length() , url.indexOf(",")));
 
             url = url.substring(url.indexOf("->") + 3);
+            
             updateURLContentList(url);
             URLTextBox.setText(url);
 
             sql.closeConnection();
 
             if(URLContentListBox.getModel().getSize() >= 1)
-            URLContentListBox.setSelectedIndex(0);
+                URLContentListBox.setSelectedIndex(0);
         }
         catch(Exception ex)
         {
@@ -963,7 +964,6 @@ public class MainFrame extends javax.swing.JFrame {
     private void presetComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presetComboBoxActionPerformed
         // TODO add your handling code here:
         int index = presetComboBox.getSelectedIndex() - 1;
-        System.out.println(index);
         if(index < 0)
             return;
 
@@ -1183,7 +1183,7 @@ public class MainFrame extends javax.swing.JFrame {
         
         try
         {
-            ResultSet rs = sql.executeQuery(String.format("select * from %s.URL_content join PublicCode.URL where URL.URL = '%s' and URL.id = URL_content.URL_id", schema, URL));
+            ResultSet rs = sql.executeQuery(String.format("select * from %s.URL_content join %s.URL where URL.URL = '%s' and URL.id = URL_content.URL_id", schema, schema, URL));
             DefaultListModel listModel = new DefaultListModel();
             String url;
             String content;
