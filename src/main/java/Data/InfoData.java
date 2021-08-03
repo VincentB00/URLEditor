@@ -26,7 +26,7 @@ public class InfoData implements java.io.Serializable
         this.password = password;
         this.schema = schema;
     }
-
+    
     @Override
     public String toString() 
     {

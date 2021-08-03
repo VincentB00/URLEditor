@@ -10,6 +10,7 @@ import Data.InfoSer;
 import Data.SQL;
 import Data.URL;
 import Data.URLContent;
+import Data.URLSet;
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.io.File;
@@ -50,7 +51,6 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() 
     {
-        //sql = new SQL("67.241.4.218", 3307, "vincentbui1999", "Tivinh265@Vv");
         infoSer = new InfoSer("data");
         initComponents();
         updatePreset();
@@ -123,7 +123,7 @@ public class MainFrame extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         presetComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        presetComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        presetComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 1", "Item 1", "Item 1" }));
         presetComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 presetComboBoxActionPerformed(evt);
@@ -332,9 +332,6 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(viewOrEditButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -374,27 +371,6 @@ public class MainFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(changeURLButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(testConnectionButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(updateURLPageButton))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(viewOrEditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(newURLContentButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(deleteURLContentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(moveUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(moveDownButton)
-                                        .addGap(166, 166, 166)
-                                        .addComponent(AutoSortButton)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -413,7 +389,29 @@ public class MainFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(URLTextBox)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(newURLButton)))))
+                                .addComponent(newURLButton))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(testConnectionButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(updateURLPageButton))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(viewOrEditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(newURLContentButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(deleteURLContentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(moveDownButton)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(moveUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(AutoSortButton)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(viewOrEditButton1)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -466,19 +464,17 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(viewOrEditButton)
-                            .addComponent(viewOrEditButton1)
-                            .addComponent(moveUpButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(newURLContentButton)
-                            .addComponent(deleteURLContentButton)
-                            .addComponent(moveDownButton))
-                        .addContainerGap())
-                    .addComponent(AutoSortButton, javax.swing.GroupLayout.Alignment.TRAILING)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewOrEditButton)
+                    .addComponent(viewOrEditButton1)
+                    .addComponent(moveUpButton)
+                    .addComponent(AutoSortButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newURLContentButton)
+                    .addComponent(deleteURLContentButton)
+                    .addComponent(moveDownButton))
+                .addContainerGap())
         );
 
         testConnectionButton.getAccessibleContext().setAccessibleDescription("");
@@ -631,6 +627,13 @@ public class MainFrame extends javax.swing.JFrame {
                 printDebug("message: " + ex.getMessage() + "\nstack trace: \n" + getStackTrace(ex));
             }
     }//GEN-LAST:event_saveToSqlButtonActionPerformed
+
+    private void AutoSortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoSortButtonActionPerformed
+        // TODO add your handling code here:
+        autoShortURL();
+        getAllURL();
+        updateURLList();
+    }//GEN-LAST:event_AutoSortButtonActionPerformed
 
     private void saveSettingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveSettingButtonActionPerformed
         // TODO add your handling code here:
@@ -869,7 +872,6 @@ public class MainFrame extends javax.swing.JFrame {
         {
             printDebug("message: " + ex.getMessage() + "\nstack trace: \n" + getStackTrace(ex));
         }
-
     }//GEN-LAST:event_newURLButtonActionPerformed
 
     private void viewOrEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewOrEditButtonActionPerformed
@@ -900,7 +902,6 @@ public class MainFrame extends javax.swing.JFrame {
         {
             printDebug("message: " + ex.getMessage() + "\nstack trace: \n" + getStackTrace(ex));
         }
-
     }//GEN-LAST:event_viewOrEditButtonActionPerformed
 
     private void URLTextBoxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_URLTextBoxKeyReleased
@@ -949,6 +950,9 @@ public class MainFrame extends javax.swing.JFrame {
             URLTextBox.setText(url);
 
             sql.closeConnection();
+
+            if(URLContentListBox.getModel().getSize() >= 1)
+            URLContentListBox.setSelectedIndex(0);
         }
         catch(Exception ex)
         {
@@ -959,8 +963,9 @@ public class MainFrame extends javax.swing.JFrame {
     private void presetComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presetComboBoxActionPerformed
         // TODO add your handling code here:
         int index = presetComboBox.getSelectedIndex() - 1;
+        System.out.println(index);
         if(index < 0)
-        return;
+            return;
 
         ip = infoSer.list.get(index).ip;
         port = infoSer.list.get(index).port;
@@ -973,13 +978,7 @@ public class MainFrame extends javax.swing.JFrame {
         UsernameTextBox.setText(username);
         PasswordTextBox.setText(password);
         SchemaTextBox.setText(schema);
-
     }//GEN-LAST:event_presetComboBoxActionPerformed
-
-    private void AutoSortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoSortButtonActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_AutoSortButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1089,16 +1088,20 @@ public class MainFrame extends javax.swing.JFrame {
     
     public void updatePreset()
     {
-        presetComboBox.removeAll();
+        presetComboBox.removeAllItems();
         
-        DefaultComboBoxModel listModel = new DefaultComboBoxModel();
+//        DefaultComboBoxModel listModel = new DefaultComboBoxModel();
+//        
+//        listModel.addElement("Please select preset below ...");
+//        
+//        for(int count = 0; count < infoSer.list.size(); count++)
+//            listModel.addElement(infoSer.list.get(count).toString());
+//        
+//        presetComboBox.setModel(listModel);
         
-        listModel.addElement("Please select preset below ...");
-        
+        presetComboBox.addItem("Please select preset below ...");
         for(int count = 0; count < infoSer.list.size(); count++)
-            listModel.addElement(infoSer.list.get(count).toString());
-        
-        presetComboBox.setModel(listModel);
+            presetComboBox.addItem(count + 1 + ". " + infoSer.list.get(count).toString());
     }
     
     public int getCurrentURLID()
@@ -1146,6 +1149,7 @@ public class MainFrame extends javax.swing.JFrame {
             int currentSelectedIndex = URLListBox.getSelectedIndex();
             
             URLListBox.removeAll();
+            URLContentListBox.removeAll();
         
             DefaultListModel listModel = new DefaultListModel();
             for(int count = 0; count < urlList.size(); count++)
@@ -1230,4 +1234,136 @@ public class MainFrame extends javax.swing.JFrame {
         debugTextArea.append("\n");
     }
     
+    public void printDebug(Exception ex)
+    {
+        printDebug("message: " + ex.getMessage() + "\nstack trace: \n" + getStackTrace(ex));
+    }
+    
+    public void autoShortURL()
+    {
+        urlList = new LinkedList<URL>();
+        urlContentList = new LinkedList<URLContent>();
+        
+        try
+        {
+            ResultSet rs = sql.executeQuery(String.format("Select id, URL from %s.URL", schema));
+            
+            while(rs.next())
+                urlList.add(new URL(rs.getInt("id"), rs.getString("URL")));
+            
+            rs.close();
+            sql.closeConnection();
+            
+            rs = sql.executeQuery(String.format("Select id, URL_id from %s.URL_content", schema));
+            
+            while(rs.next())
+                urlContentList.add(new URLContent(rs.getInt("id"), rs.getInt("URL_id"), "***"));
+            
+            rs.close();
+            sql.closeConnection();
+            
+            ///////////////////////////////////////////////////////////////////////////////////////
+            LinkedList<URLSet> list = new LinkedList<URLSet>();
+            LinkedList<URLSet> listT;
+            LinkedList<URLSet> sortedList = new LinkedList<URLSet>();
+            for(int count = 0; count < urlList.size(); count++)
+            {
+                list.add(new URLSet(urlList.get(count)));
+            }
+            for(int count = 0; count < urlContentList.size(); count++)
+            {
+                addURLContentToSet(list, urlContentList.get(count));
+            }
+
+            int maxLevel = 1;
+            for(int count = 0; count < list.size(); count++)
+            {
+                if(list.get(count).beforeSortedID > maxLevel)
+                    maxLevel = list.get(count).beforeSortedID;
+            }
+
+            for(int level = 1; level <= maxLevel; level++)
+            {
+                listT = new LinkedList<URLSet>();
+
+                //add each level to list T for sorting
+                for(int count = 0; count < list.size(); count++)
+                    if(list.get(count).urlLevel == level)
+                        listT.add(list.get(count));
+
+                while(!listT.isEmpty())
+                {
+                    sortedList.add(getSmallest(listT, level - 1));
+                }
+            }
+
+            for(int count = 1; count <= sortedList.size(); count++)
+                sortedList.get(count - 1).afterSortedID = count;
+
+            //set all URL table id to it negative
+            for(int count = 0; count < sortedList.size(); count++)
+            {
+                int currentID = sortedList.get(count).beforeSortedID;
+                sql.executeUpdate(String.format("UPDATE `%s`.`URL` SET `id` = '%s' WHERE (`id` = '%s');", schema, currentID * -1, currentID));
+                sortedList.get(count).beforeSortedID = currentID * -1;
+            }
+
+            for(int count = 0; count < sortedList.size(); count++)
+            {
+                int currentID = sortedList.get(count).beforeSortedID;
+                int afterSortID = sortedList.get(count).afterSortedID;
+                sql.executeUpdate(String.format("UPDATE `%s`.`URL` SET `id` = '%s' WHERE (`id` = '%s');", schema, afterSortID, currentID));
+            }
+
+            for(int count = 0; count < sortedList.size(); count++)
+            {
+                if(!sortedList.get(count).urlContentList.isEmpty())
+                {
+                    int urlContentListSize = sortedList.get(count).urlContentList.size();
+                    for(int count1 = 0; count1 < urlContentListSize; count1++)
+                    {
+                        int currentID = sortedList.get(count).urlContentList.get(count1).id;
+                        int afterSortID = sortedList.get(count).afterSortedID;
+                        sql.executeUpdate(String.format("UPDATE `%s`.`URL_content` SET `URL_id` = '%s' WHERE (`id` = '%s');", schema, afterSortID, currentID));
+                    }
+                }
+            }
+            
+            sql.executeUpdate(String.format("ALTER TABLE %s.URL AUTO_INCREMENT = %s", schema, sortedList.size() + 1));
+            
+        }
+        catch(Exception ex)
+        {
+            printDebug(ex);
+        }
+    }
+    
+    public static URLSet getSmallest(LinkedList<URLSet> list, int level)
+    {
+        int index = 0;
+        for(int count = 0; count < list.size(); count++)
+        {
+            if(list.get(count).paths[level].charAt(0) < list.get(index).paths[level].charAt(0))
+                index = count;
+        }
+        
+        URLSet set = list.get(index);
+        list.remove(index);
+        return set;
+    }
+    
+    public static void addURLContentToSet(LinkedList<URLSet> urlList, URLContent urlContent)
+    {
+        int urlContentID = urlContent.URL_id;
+        for(int count = 0; count < urlList.size(); count++)
+        {
+            int urlID = urlList.get(count).beforeSortedID;
+            if(urlID == urlContentID)
+            {
+                urlList.get(count).urlContentList.add(urlContent);
+                return;
+            }
+                
+        }
+    }
 }

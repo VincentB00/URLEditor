@@ -3,10 +3,10 @@ package Data;
 public class URL 
 {
 	public int id;
-	public String name;
+	public String name = null;
 	public String path;
-        public boolean protected_resources;
-	public String userGroup;
+        public boolean protected_resources = false;
+	public String userGroup = null;
 	public URL(int id, String name, String path, boolean protected_resources, String userGroup)
 	{
 		this.id = id;
@@ -24,6 +24,11 @@ public class URL
 	public URL(String name, String path)
 	{
 		this.name = name;
+		this.path = path;
+	}
+        public URL(int id, String path)
+	{
+		this.id = id;
 		this.path = path;
 	}
 	@Override

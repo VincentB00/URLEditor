@@ -67,10 +67,6 @@
                           <Component id="jLabel1" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" alignment="1" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="viewOrEditButton1" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -118,35 +114,6 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="changeURLButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="testConnectionButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="updateURLPageButton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="viewOrEditButton" min="-2" pref="430" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="newURLContentButton" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="deleteURLContentButton" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="moveUpButton" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="moveDownButton" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
-                                              <Component id="AutoSortButton" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel6" max="32767" attributes="0"/>
@@ -171,6 +138,36 @@
                                       <Component id="newURLButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="testConnectionButton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="updateURLPageButton" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="viewOrEditButton" min="-2" pref="430" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="newURLContentButton" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="deleteURLContentButton" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="moveDownButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="moveUpButton" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="AutoSortButton" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="viewOrEditButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -233,23 +230,19 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" pref="132" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="viewOrEditButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="viewOrEditButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="moveUpButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="newURLContentButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="deleteURLContentButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="moveDownButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="AutoSortButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="viewOrEditButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="viewOrEditButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="moveUpButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AutoSortButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="newURLContentButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="deleteURLContentButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="moveDownButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -263,9 +256,9 @@
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
                     <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                    <StringItem index="1" value="Item 1"/>
+                    <StringItem index="2" value="Item 1"/>
+                    <StringItem index="3" value="Item 1"/>
                   </StringArray>
                 </Property>
               </Properties>
